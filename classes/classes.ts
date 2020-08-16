@@ -128,6 +128,7 @@ console.log(carro1.frear())
 // carro1.alterarVelocidade(150)
 // console.log('Atual -> ' + carro1.velocidadeAtual)
 
+// Herança
 class Ferrari extends Carro {
   constructor(modelo: string, velocidadeMaxima: number) {
     // Permitir que o construtor da classe pai seja executado
@@ -176,7 +177,7 @@ class Matematica {
   static PI: number = 3.1416
 
   static areaCirc(raio: number): number {
-    return this.PI * raio * raio
+    return Matematica.PI * raio * raio
   }
 }
 
@@ -191,6 +192,7 @@ const m1 = new Matematica()
 console.log(Matematica.areaCirc(4))
 
 // Classes abstrata
+// Não é possível instaciar uma classe Abstrata
 // Classe feita para ser herdada por classes concretas
 abstract class Calculo {
   protected resultado: number = 0
@@ -222,3 +224,37 @@ console.log(c1.getResultado())
 c1 = new Multiplicacao()
 c1.executar(2, 3, 4, 5)
 console.log(c1.getResultado())
+
+// Construtor Privado & Singleton
+class Unico {
+  private static instance: Unico = new Unico
+  private constructor() {}
+
+  static getInstance(): Unico {
+    return Unico.instance
+  }
+
+  agora() {
+    return new Date
+  }
+}
+
+// Exemplo errado
+// const errado = new Unico()
+
+console.log(Unico.getInstance().agora())
+
+// Somente Leitura
+class Aviao {
+  public readonly modelo: string
+
+  constructor(modelo: string, public readonly prefixo: string) {
+    this.modelo = modelo
+  }
+}
+
+const turboHelice = new Aviao('Tu-114', 'PT-ABC')
+// turboHelice.modelo = 'DC-8'
+// turboHelice.prefixo = 'PT-DEF'
+console.log(turboHelice)
+
