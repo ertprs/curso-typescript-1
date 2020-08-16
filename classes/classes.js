@@ -170,6 +170,7 @@ class Multiplicacao extends Calculo {
         this.resultado = numeros.reduce((total, atual) => total * atual);
     }
 }
+// Exemplo de polimorfismo
 let c1 = new Soma();
 c1.executar(2, 3, 4, 5);
 console.log(c1.getResultado());
