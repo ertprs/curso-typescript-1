@@ -56,3 +56,70 @@ potencia = function(base: number, expoente: number): number {
 console.log(potencia(3, 10))
 console.log(Math.pow(3, 10))
 console.log(3 ** 10)
+
+// Herança
+interface A {
+  a(): void
+}
+
+interface B {
+  b(): void
+}
+
+// Interface herdando outra interface é necessário usar Extends
+interface ABC extends A, B {
+  c(): void
+}
+
+// Classe herdando interface é necessário usar Implements
+class RealA implements A {
+  a(): void {}
+}
+
+class RealAB implements A, B {
+  a(): void {}
+  b(): void {}
+}
+
+class RealABC implements A, B {
+  a(): void {}
+  b(): void {}
+  c(): void {}
+}
+
+// Obrigatório implementar os métodos das interfaces que foram herdadas
+
+abstract class AbstrataABD implements A, B {
+  a(): void {}
+  b(): void {}
+  abstract d(): void
+}
+
+// Uso de interface para estender Object
+
+interface Object {
+  log(): void
+}
+
+Object.prototype.log = function() {
+  console.log(this.toString())
+}
+
+const x = 2
+const y = 3
+const zi = 4
+
+x.log()
+y.log()
+zi.log()
+
+const cli = {
+  nome: 'Pedro',
+  toString() {
+    return this.nome
+  }
+}
+cli.log()
+
+
+
