@@ -18,4 +18,23 @@ const avaliacoes = [10, 9.3, 6.7];
 avaliacoes.push(8.4);
 //avaliacoes.push('5.5') -- Não consegue dar um push em um Array genérico do tipo number
 console.log(avaliacoes);
+// Array 
+function imprimir(args) {
+    args.forEach(elemento => console.log(elemento));
+}
+imprimir([1, 2, 3]);
+imprimir([1, 2, 3]);
+imprimir(['Ana', 'Bia', 'Paulo']);
+imprimir([
+    { nome: 'Paulo', idade: 22 },
+    { nome: 'Fulano', idade: 24 },
+    { nome: 'Cicrano', idade: 15 }
+]);
+imprimir([
+    { nome: 'Paulo', idade: 22 },
+    { nome: 'Fulano', idade: 24 },
+    { nome: 'Cicrano', idade: 15 }
+]);
+const chamarEcho = echoMelhorado;
+console.log(chamarEcho('Something'));
 //# sourceMappingURL=genericos.js.map

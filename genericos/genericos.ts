@@ -20,3 +20,29 @@ const avaliacoes: Array<number> = [10, 9.3, 6.7]
 avaliacoes.push(8.4)
 //avaliacoes.push('5.5') -- Não consegue dar um push em um Array genérico do tipo number
 console.log(avaliacoes)
+
+// Array 
+function imprimir<T>(args: T[]) {
+  args.forEach(elemento => console.log(elemento))
+}
+
+imprimir([1, 2, 3])
+imprimir<number>([1, 2, 3])
+imprimir<string>(['Ana', 'Bia', 'Paulo'])
+imprimir<{ nome: string, idade: number }>([
+ { nome: 'Paulo', idade: 22 },
+ { nome: 'Fulano', idade: 24 },
+ { nome: 'Cicrano', idade: 15 }
+])
+
+type Aluno = { nome: string, idade: number }
+imprimir<Aluno>([
+  { nome: 'Paulo', idade: 22 },
+  { nome: 'Fulano', idade: 24 },
+  { nome: 'Cicrano', idade: 15 }
+])
+
+// Tipo Genérico
+type Echo = <T>(data: T) => T
+const chamarEcho: Echo = echoMelhorado
+console.log(chamarEcho<string>('Something'))
