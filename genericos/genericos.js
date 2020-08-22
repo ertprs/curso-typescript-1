@@ -78,6 +78,7 @@ console.log(new DiferencaEntreDatas(d1, d2).executar());
 // Desafio Classe Fila
 // Atributo: fila (Array)
 // Métodos: entrar, próximo, imprimir
+// Inclusão de Restrições (Constraints)
 class Fila {
     constructor(...args) {
         this.fila = args;
@@ -107,4 +108,6 @@ console.log('Próximo da fila: ', fila.proximo());
 console.log('Próximo da fila: ', fila.proximo());
 console.log('Próximo da fila: ', fila.proximo());
 fila.imprimir();
+const novaFila = new Fila(1, 2, 3);
+novaFila.imprimir();
 //# sourceMappingURL=genericos.js.map
